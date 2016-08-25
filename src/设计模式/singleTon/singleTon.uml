@@ -1,0 +1,9 @@
+@startuml
+
+class SingleTon{
+	-{static} SingleTon instance
+	-SingelTon()
+	+{static} SingelTon getInstace()
+}
+
+@enduml

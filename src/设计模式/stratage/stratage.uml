@@ -1,0 +1,28 @@
+@startuml
+
+StratageA..|>Stratage
+StratageB..|>Stratage
+Context-->Stratage
+Context o--Stratage
+
+class Context{
+	- stratage：Stratage
+	+ Context()
+	+contextMethod()：void
+	
+}
+
+Interface Stratage{
+	+{abstract} stratageMethod():void
+
+}
+
+Class StratageA{
+	+stratageMethod():void
+}
+
+Class StratageB{
+	+stratageMethod():void
+}
+
+@enduml
