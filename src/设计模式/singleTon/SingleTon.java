@@ -1,4 +1,5 @@
-package 设计模式;
+
+package 设计模式.singleTon;
 /*
  *2016年8月10日	下午8:49:45
  *@Author Pin-Wang
@@ -21,13 +22,12 @@ public class SingleTon {
 //单例模式（双重锁检查）
 class Single_d{
 	private static Single_d Instance;
-	private static Object object=new Object();
 	//构造器私有化
 	private Single_d(){}
 	//静态公开方法返回实例
 	public static Single_d getInstance(){
 		if(Instance==null){
-			synchronized(object){
+			synchronized(Single_d.class){
 				if(Instance==null){
 					Instance=new Single_d();
 				}
