@@ -1,0 +1,28 @@
+@startuml
+
+ConcreteProductA..|>Product
+ConcreteProductB..|>Product
+Factory..>ConcreteProductA
+Factory..>ConcreteProductB
+Client..>Product
+Client..>Factory
+
+Interface Product{
+	+operation():void
+}
+Class ConcreteProductA{
+	+operation():void
+}
+
+Class ConcreteProductB{
+	+operation():void
+}
+
+Class Factory{
+	+getProduct():void
+}
+Class Client{
+	
+}
+
+@enduml
