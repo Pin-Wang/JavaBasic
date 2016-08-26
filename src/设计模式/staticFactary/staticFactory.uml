@@ -19,7 +19,7 @@ Class ConcreteProductB{
 }
 
 Class Factory{
-	+getProduct():void
+	+getProduct():Product
 }
 Class Client{
 	
