@@ -6,5 +6,4 @@ package 设计模式.stratage;
 */
 public interface Stratage {
 	  double getPrive(double price);
-
 }
