@@ -1,0 +1,22 @@
+@startuml
+
+RealSubject..|>Subject
+Proxy..|>Subject
+Client..>Subject
+Proxy-->RealSubject
+
+Interface Subject{
+	+{abstract}methodA():void
+}
+
+Class RealSubject{
+	+ methodA():void
+}
+
+Class Proxy{
+	subjec:Subject
+	+ methodA:void
+}
+
+
+@enduml
