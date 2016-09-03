@@ -1,0 +1,68 @@
+@startuml
+
+AbstractProductA<|..ConcreteProductA1
+AbstractProductA<|..ConcreteProductA2
+AbstractProductB<|..ConcreteProductB1
+AbstractProductB<|..ConcreteProductB2
+
+
+Interface AbstractProductA{
+	+{static} methodA():void
+
+}
+
+Class ConcreteProductA1{
+	property:String
+	+methodA():void
+}
+
+Class ConcreteProductA2{
+	property:String
+	+methodA():void
+}
+
+Interface AbstractProductB{
+	+{static} methodA():void
+
+}
+
+Class ConcreteProductB1{
+	property:String
+	+methodA():void
+}
+
+Class ConcreteProductB2{
+	property:String
+	+methodA():void
+}
+
+Interface AbstractFactory{
+	 +{static}createProductA():
+	 +{static}createProductB():
+}
+
+Class ConcreteFactoryA{
+	 +createProductA():ConcreteProductA1
+	 +createProductB():ConcreteProductB1
+	
+}
+Class ConcreteFactoryB{
+	 +createProductA():ConcreteProductA2
+	 +createProductB():ConcreteProductB2
+	
+}
+AbstractFactory<|..ConcreteFactoryA
+AbstractFactory<|..ConcreteFactoryB
+
+ConcreteFactoryA..>ConcreteProductA1
+ConcreteFactoryA..>ConcreteProductB1
+
+ConcreteFactoryB..>ConcreteProductA2
+ConcreteFactoryB..>ConcreteProductB2
+
+Client..>AbstractFactory
+Client..>AbstractProductA
+Client..>AbstractProductB
+
+
+@enduml
