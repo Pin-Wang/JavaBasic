@@ -1,0 +1,28 @@
+@startuml
+
+Class Abstract{
+	+methodA():void
+}
+
+Class RefinedAbstract{
+	+methodB:void
+}
+
+RefinedAbstract--|>Abstract
+
+Interface Implementor{
+	+{abstract}methoC():void
+}
+
+Class ConcreteImplementorA{
+	+methodC:void
+}
+Class ConcreteImplementorB{
+	+methodC:void
+}
+ConcreteImplementorA..|>Implementor
+ConcreteImplementorB..|>Implementor
+
+Abstract-->Implementor
+
+@enduml
