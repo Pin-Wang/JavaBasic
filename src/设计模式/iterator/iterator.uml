@@ -1,0 +1,29 @@
+@startuml
+
+Interface Aggregate{
+	+{abstract}add():void
+	+{abstract}delete():void
+}
+
+Class ConcreteAggregate{
+	+add(int a):void
+	+delete(int a):void
+}
+ConcreteAggregate..|>Aggregate
+
+Interface Iterator{
+	+{abstract}hasNext():boolean
+	+{abstract}next():int
+}
+
+Class ConcreteIterator{
+	+hasNext():boolean
+	+next():int
+}
+ConcreteIterator..|>Iterator
+
+ConcreteIterator-->ConcreteAggregate
+
+Client..>Iterator
+Client..>Aggregate
+@enduml
